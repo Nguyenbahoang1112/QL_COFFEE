@@ -6,13 +6,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QL_COFFEE_WPF2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="600">
+        Title="MainWindow" Height="500" Width="600">
     <Grid>
-        <TextBox x:Name="txt_UserID" HorizontalAlignment="Left" Margin="280,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txt_Password" HorizontalAlignment="Left" Margin="280,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="LOGIN&#xD;&#xA;" HorizontalAlignment="Left" Margin="159,52,0,0" VerticalAlignment="Top" Width="201"/>
-        <Button x:Name="btn_Login" Content="Login&#xD;&#xA;" HorizontalAlignment="Left" Margin="360,242,0,0" VerticalAlignment="Top" Height="22" Click="btn_Login_Click"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="264,242,0,0" VerticalAlignment="Top" Width="53"/>
+        <TextBox x:Name="txt_UserID" HorizontalAlignment="Left" Margin="93,102,0,0"  VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="txt_Password" HorizontalAlignment="Left" Margin="93,149,0,0" VerticalAlignment="Top" Width="120" PasswordChar="*"/>
+        <Label Content="LOGIN&#xD;&#xA;" HorizontalAlignment="Left" Margin="68,42,0,0" VerticalAlignment="Top" Width="149"/>
+        <Button x:Name="btn_Login" Content="Login&#xD;&#xA;" HorizontalAlignment="Left" Margin="164,196,0,0" VerticalAlignment="Top" Height="22" Click="btn_Login_Click"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="93,196,0,0" VerticalAlignment="Top" Width="53"/>
 
     </Grid>
 </Window>

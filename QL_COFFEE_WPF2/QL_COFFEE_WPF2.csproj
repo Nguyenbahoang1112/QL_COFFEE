@@ -11,9 +11,12 @@
 
   <ItemGroup>
     <Folder Include="DAL\" />
+    <Folder Include="Images\Food_Image\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="devexpress.wpf.carousel" Version="22.2.3" />
+    <PackageReference Include="devexpress.wpf.layoutcontrol" Version="22.2.3" />
     <PackageReference Include="devexpress.wpf.navbar" Version="22.2.3" />
     <PackageReference Include="devexpress.wpf.treemap" Version="22.2.3" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />

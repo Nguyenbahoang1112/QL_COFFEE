@@ -5,19 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QL_COFFEE_WPF2"
         mc:Ignorable="d"
-        Title="Narbar" Height="450" Width="1000">
-    <Grid>
-        <StackPanel x:Name="pnl_Narbar" Margin="0,0,800,0" Background="#FF78F367">
-            <Button x:Name="btn_PhucVu" Content="Phục vụ" Height="44" Click="btn_PhucVu_Click"/>
-            <Button x:Name="btn_Menu" Content="Thực đơn" Height="44"/>
-            <Button x:Name="btn_Storate" Content="Kho" Height="44"/>
-            <Button x:Name="btn_Luong" Content="Lương" Height="44"/>
-            <Button x:Name="btn_NhanVien" Content="Nhân viên" Height="44" Width="auto" />
-            <Button Content="Thống kê" Height="44" Width="auto" />
-            <Button Content="Đăng xuất" Height="44" Width="auto"/>
-            <Button Content="Thoát" Height="44" Width="auto"/>
-        </StackPanel>
+        Title="Narbar" Height="1080" Width="1920"
+        WindowState="Maximized" >
+    <Window.Resources>
         
-        <StackPanel x:Name="pnl_Main" Margin="205,0,0,0"/>
+    </Window.Resources>
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="6*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="btn_PhucVu" Content="Phục vụ"  Click="btn_PhucVu_Click" Grid.Row="0"/>
+        <Button x:Name="btn_Menu" Content="Thực đơn"   Grid.Row="1" Click="btn_Menu_Click"/>
+        <Button x:Name="btn_Storate" Content="Kho" Grid.Row="2"/>
+        <Button x:Name="btn_Luong" Content="Lương" Grid.Row="3"/>
+        <Button x:Name="btn_NhanVien" Content="Nhân viên"  Grid.Row="4"/>
+        <Button Content="Thống kê"  Grid.Row="5"/>
+        <Button Content="Đăng xuất"  Grid.Row="6"/>
+        <Button Content="Thoát"  Grid.Row="7"/>
+
+        <StackPanel x:Name="pnl_Main" Grid.Column="1">
+            
+        </StackPanel>
     </Grid>
 </Window>

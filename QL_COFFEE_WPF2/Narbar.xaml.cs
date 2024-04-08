@@ -26,14 +26,7 @@ namespace QL_COFFEE_WPF2
         }
 		private PhucVu phucVuInstance;
 		private void btn_PhucVu_Click(object sender, RoutedEventArgs e)
-		{
-
-			//PhucVu phucVu = new PhucVu();
-			//if (!pnl_Main.Children.Contains(phucVu))
-			//	pnl_Main.Children.Add(phucVu);
-			//phucVu.Show();
-
-
+		{	
 			// Kiểm tra xem phucVuInstance đã được khởi tạo chưa
 			if (phucVuInstance == null)
 			{
@@ -45,6 +38,11 @@ namespace QL_COFFEE_WPF2
 			{
 				// Nếu đã tồn tại, không thêm vào Panel nữa
 			}
+		}
+
+		private void btn_Menu_Click(object sender, RoutedEventArgs e)
+		{
+
 		}
 	}
 }

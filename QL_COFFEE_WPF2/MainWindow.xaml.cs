@@ -32,10 +32,11 @@ namespace QL_COFFEE_WPF2
 		}
 		private void btn_Login_Click(object sender, RoutedEventArgs e)
 		{
-			DataTable dt = AccountDAO.Instance.Login(txt_UserID.Text, txt_Password.Text);
+			string password = txt_Password.Password;
+			DataTable dt = AccountDAO.Instance.Login(txt_UserID.Text, password);
 			if(dt.Rows.Count>0)
 			{
-				userID = dt.Rows[0]["UserID"].ToString();
+				userID = dt.Rows[0]["ID_User"].ToString();
 				userName = dt.Rows[0]["UserName"].ToString();
 				pass = dt.Rows[0]["Pass"].ToString();
 				
