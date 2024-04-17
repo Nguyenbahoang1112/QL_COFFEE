@@ -23,16 +23,18 @@ namespace QL_COFFEE_WPF2
         public Narbar()
         {
             InitializeComponent();
+			btn_PhucVu_Click(null,null);
         }
+
 		private PhucVu phucVuInstance;
-		private void btn_PhucVu_Click(object sender, RoutedEventArgs e)
+		public void btn_PhucVu_Click(object sender, RoutedEventArgs e)
 		{	
 			// Kiểm tra xem phucVuInstance đã được khởi tạo chưa
 			if (phucVuInstance == null)
 			{
 				// Nếu chưa, khởi tạo phucVuInstance và thêm vào Panel
 				phucVuInstance = new PhucVu();
-				pnl_Main.Children.Add(phucVuInstance);
+				grd_Main.Children.Add(phucVuInstance);
 			}
 			else
 			{

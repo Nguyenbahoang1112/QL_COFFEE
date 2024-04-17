@@ -4,15 +4,98 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:QL_COFFEE_WPF2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="600">
-    <Grid>
-        <TextBox x:Name="txt_UserID" HorizontalAlignment="Left" Margin="93,102,0,0"  VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="txt_Password" HorizontalAlignment="Left" Margin="93,149,0,0" VerticalAlignment="Top" Width="120" PasswordChar="*"/>
-        <Label Content="LOGIN&#xD;&#xA;" HorizontalAlignment="Left" Margin="68,42,0,0" VerticalAlignment="Top" Width="149"/>
-        <Button x:Name="btn_Login" Content="Login&#xD;&#xA;" HorizontalAlignment="Left" Margin="164,196,0,0" VerticalAlignment="Top" Height="22" Click="btn_Login_Click"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="93,196,0,0" VerticalAlignment="Top" Width="53"/>
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--Textbox-->
+        <Style TargetType="TextBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="12">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground"
+                                Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
+        <Style TargetType="PasswordBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="12"></Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                <GradientStop Color="#FFE63070" Offset="1"></GradientStop>
+                <GradientStop Color="#FFFE8704" Offset="0.5"></GradientStop>
+                <GradientStop Color="YellowGreen" Offset="0"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border Height="390" VerticalAlignment="Top" CornerRadius="0 0 180 30" Background="Black">
+
+        </Border>
+
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Width="350">
+                <Image  Source="/Images/Food_Image/Coffee_Logo.png" Width="300" Height="300" VerticalAlignment="Top" Margin="20 40 20 10" Stretch="Fill"></Image>
+            </StackPanel>
+            <StackPanel Width="370">
+                <TextBlock Text="USER LOGIN" FontSize="30" HorizontalAlignment="Left" Margin="100,40,20,0" Width="185" Height="42" Foreground="White"/>
+                <StackPanel Orientation="Horizontal" Margin="30 30">
+                    <materialDesign:PackIcon Kind="User" Width="25" Height="25" Margin="5 10 0 0" Foreground="White"/>
+                    <TextBox x:Name="txt_UserID" Margin="20 10"   Width="250" Height="30" BorderBrush="White" CaretBrush="#FFD94448" SelectionBrush="#FFD94448" Background="Black" BorderThickness="1"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="30 0" >
+                    <materialDesign:PackIcon Kind="Lock" Width="25" Height="25" Margin="5 0 0 0" Foreground="White"/>
+                    <PasswordBox x:Name="txt_Password"  Margin="20 0" Width="250"  Height="30" Foreground="White" Background="Black" BorderThickness="1.5"/>
+                </StackPanel>
+                <TextBlock x:Name="lbl_Alert_Login" Text="Re-enter your account or password" Margin="80 0 0 0" Foreground="Red" Visibility="Collapsed"/>
+                <StackPanel Height="50" Margin="10">
+                    <Button x:Name="btn_Login" Foreground="White" Width="130" Content="Login&#xA;"    Height="36" Click="btn_Login_Click" FontSize="20" Background="#FFFE8704" FontWeight="Bold" BorderThickness="1" BorderBrush="#D94448" Margin="50 5 20 5"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        
     </Grid>
 </Window>
+<!--<TextBox x:Name="txt_UserID" HorizontalAlignment="Left" Margin="122,106,0,0"  VerticalAlignment="Top" Width="120" Height="1"/>
+<PasswordBox x:Name="txt_Password" HorizontalAlignment="Left" Margin="122,153,0,0" VerticalAlignment="Top" Width="120" PasswordChar="*" Height="1"/>
+<Label Content="LOGIN&#xA;" FontSize="24" HorizontalAlignment="Left" Margin="124,46,0,0" VerticalAlignment="Top" Width="77" Height="36"/>
+<Button x:Name="btn_Login" Content="Login&#xA;" HorizontalAlignment="Left" Margin="192,200,0,0" VerticalAlignment="Top" Height="22" Click="btn_Login_Click" Background="{x:Null}"/>
+<Button Content="Exit" HorizontalAlignment="Left" Margin="141,200,0,0" VerticalAlignment="Top" Width="52">
+    <Button.BorderBrush>
+        <ImageBrush/>
+    </Button.BorderBrush>
+    <Button.Background>
+        <ImageBrush/>
+    </Button.Background>
+</Button>-->

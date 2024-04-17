@@ -36,6 +36,8 @@ namespace QL_COFFEE_WPF2
 			DataTable dt = AccountDAO.Instance.Login(txt_UserID.Text, password);
 			if(dt.Rows.Count>0)
 			{
+				lbl_Alert_Login.Visibility = Visibility.Collapsed;
+
 				userID = dt.Rows[0]["ID_User"].ToString();
 				userName = dt.Rows[0]["UserName"].ToString();
 				pass = dt.Rows[0]["Pass"].ToString();
@@ -45,6 +47,12 @@ namespace QL_COFFEE_WPF2
 				System.Windows.Application.Current.MainWindow.Hide();
 
 			}
+			else
+			{
+				lbl_Alert_Login.Visibility=Visibility.Visible;
+				txt_Password.Password = "";
+				txt_UserID.Text = "";
+			}	
 		}
 	}
 }

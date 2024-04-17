@@ -8,24 +8,46 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="1.2*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
             <ColumnDefinition Width="3*"></ColumnDefinition>
-
         </Grid.ColumnDefinitions>
-        
-        <Label Content="Khu vực" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="47" Margin="13,10,0,0" Grid.Column="0" Height="22"/>
-        <ComboBox x:Name="cbo_Area" Margin="64,10,21,420" Grid.Column="0" SelectionChanged="cbo_Area_SelectionChanged"/>
-        <DataGrid x:Name="dgv_Table" d:ItemsSource="{d:SampleData ItemCount=20}" Margin="10,55,10,10"  Grid.Column="0" AutoGenerateColumns="False" SelectionChanged="dgv_Table_SelectionChanged"  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Canvas Grid.Column="0">
+            <Label Content="Khu vực" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="44"  Height="35" Canvas.Left="6" Canvas.Top="10"/>
+            <ComboBox x:Name="cbo_Area"  SelectionChanged="cbo_Area_SelectionChanged" Canvas.Left="55" Canvas.Top="12" Width="64" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Canvas>
+        <DataGrid x:Name="dgv_Table" d:ItemsSource="{d:SampleData ItemCount=20}"  Margin="10,0,5,41"  Grid.Column="0" Grid.Row="1" AutoGenerateColumns="False" SelectionChanged="dgv_Table_SelectionChanged"  >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="STT" Binding="{Binding STT}" Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Bàn" Binding="{Binding Table_Name}" Width="2*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Trạng thái" Binding="{Binding Table_Status}" Width="2*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <!--Hiển thị card Food-->
+        <Grid x:Name="grd_Table" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+            <ScrollViewer Grid.Column="1"  Grid.Row="0" Grid.ColumnSpan="1" Grid.RowSpan="2" BorderThickness="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+                <ListView x:Name="lv_Food" Margin="5,0,5,0">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Black" BorderThickness="1" Margin="10" Height="100" Width="100">
+                                <local:UC_Food>
 
-        <StackPanel x:Name="pnl_HoaDon" Grid.Column="1" Margin="0,0,0,0" >
-            
-        </StackPanel>
+                                </local:UC_Food>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </UserControl>
     

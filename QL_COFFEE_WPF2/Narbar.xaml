@@ -7,13 +7,10 @@
         mc:Ignorable="d"
         Title="Narbar" Height="1080" Width="1920"
         WindowState="Maximized" >
-    <Window.Resources>
-        
-    </Window.Resources>
-        <Grid>
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="6*"></ColumnDefinition>
+            <ColumnDefinition Width="8*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
@@ -35,8 +32,8 @@
         <Button Content="Đăng xuất"  Grid.Row="6"/>
         <Button Content="Thoát"  Grid.Row="7"/>
 
-        <StackPanel x:Name="pnl_Main" Grid.Column="1">
+        <Grid x:Name="grd_Main" Grid.Column="1" Grid.RowSpan="8">
             
-        </StackPanel>
+        </Grid>
     </Grid>
 </Window>
