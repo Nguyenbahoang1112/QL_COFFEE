@@ -23,36 +23,36 @@ namespace QL_COFFEE_WPF2
 		public static string pass;
 		public MainWindow()
 		{
-			InitializeComponent();
-			Load();
+			//InitializeComponent();
+			//Load();
 		}
 		void Load()
 		{
-			txt_UserID.Focus();
+			////txt_UserID.Focus();
 		}
 		private void btn_Login_Click(object sender, RoutedEventArgs e)
 		{
-			string password = txt_Password.Password;
-			DataTable dt = AccountDAO.Instance.Login(txt_UserID.Text, password);
-			if(dt.Rows.Count>0)
-			{
-				lbl_Alert_Login.Visibility = Visibility.Collapsed;
+			//string password = txt_Password.Password;
+			//DataTable dt = AccountDAO.Instance.Login(txt_UserID.Text, password);
+			//if (dt.Rows.Count > 0)
+			//{
+			//	//lbl_Alert_Login.Visibility = Visibility.Collapsed;
 
-				userID = dt.Rows[0]["ID_User"].ToString();
-				userName = dt.Rows[0]["UserName"].ToString();
-				pass = dt.Rows[0]["Pass"].ToString();
-				
-				Narbar narbar= new Narbar();
-				narbar.Show();
-				System.Windows.Application.Current.MainWindow.Hide();
+			//	//userID = dt.Rows[0]["ID_User"].ToString();
+			//	//userName = dt.Rows[0]["UserName"].ToString();
+			//	//pass = dt.Rows[0]["Pass"].ToString();
 
-			}
-			else
-			{
-				lbl_Alert_Login.Visibility=Visibility.Visible;
-				txt_Password.Password = "";
-				txt_UserID.Text = "";
-			}	
+			Narbar narbar = new Narbar();
+			narbar.Show();
+			System.Windows.Application.Current.MainWindow.Hide();
+
+			//}
+			//else
+			//{
+			//	//lbl_Alert_Login.Visibility=Visibility.Visible;
+			//	//txt_Password.Password = "";
+			//	//txt_UserID.Text = "";
+			//}
 		}
 	}
 }

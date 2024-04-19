@@ -7,11 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="200">
     <Grid>
-        <TextBlock Text="{Binding Table_Name}" Foreground="White"></TextBlock>
-        <Rectangle RadiusX="31.375" RadiusY="31.375">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/Images/Table/Table.png" Stretch="Fill"></ImageBrush>
-            </Rectangle.Fill>
-        </Rectangle>
+        <Canvas>
+            <TextBlock Text="{Binding Table_Name}" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="25"></TextBlock>
+            <Rectangle RadiusX="31.375" RadiusY="31.375" Height="200" Width="200">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Images/Table/Table.png" Stretch="Fill"></ImageBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Canvas>
     </Grid>
 </UserControl>

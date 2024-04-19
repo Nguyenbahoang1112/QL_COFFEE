@@ -29,7 +29,7 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         CornerRadius="12">
-                            <ScrollViewer x:Name="PART_ContentHost"/>
+                            <!--<ScrollViewer x:Name="PART_ContentHost"/>-->
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsEnabled" Value="False">
@@ -72,15 +72,15 @@
                 <TextBlock Text="USER LOGIN" FontSize="30" HorizontalAlignment="Left" Margin="100,40,20,0" Width="185" Height="42" Foreground="White"/>
                 <StackPanel Orientation="Horizontal" Margin="30 30">
                     <materialDesign:PackIcon Kind="User" Width="25" Height="25" Margin="5 10 0 0" Foreground="White"/>
-                    <TextBox x:Name="txt_UserID" Margin="20 10"   Width="250" Height="30" BorderBrush="White" CaretBrush="#FFD94448" SelectionBrush="#FFD94448" Background="Black" BorderThickness="1"/>
+                    <TextBox x:Name="txt_UserID" Margin="20 10"  FontSize="14" Width="250" Height="30" BorderBrush="White" Foreground="White" CaretBrush="#FFD94448" SelectionBrush="#FFD94448" Background="Black" BorderThickness="2"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="30 0" >
                     <materialDesign:PackIcon Kind="Lock" Width="25" Height="25" Margin="5 0 0 0" Foreground="White"/>
-                    <PasswordBox x:Name="txt_Password"  Margin="20 0" Width="250"  Height="30" Foreground="White" Background="Black" BorderThickness="1.5"/>
+                    <PasswordBox x:Name="txt_Password"  Margin="20 0" Width="250"  Height="30" Background="Black"  BorderThickness="2" Foreground="White"/>
                 </StackPanel>
                 <TextBlock x:Name="lbl_Alert_Login" Text="Re-enter your account or password" Margin="80 0 0 0" Foreground="Red" Visibility="Collapsed"/>
                 <StackPanel Height="50" Margin="10">
-                    <Button x:Name="btn_Login" Foreground="White" Width="130" Content="Login&#xA;"    Height="36" Click="btn_Login_Click" FontSize="20" Background="#FFFE8704" FontWeight="Bold" BorderThickness="1" BorderBrush="#D94448" Margin="50 5 20 5"/>
+                    <Button x:Name="btn_Login" Foreground="White" Width="130" Content="Login&#xA;"    Height="36" Click="btn_Login_Click" FontSize="20" Background="#FFFE8704" FontWeight="Bold" BorderThickness="2" BorderBrush="#D94448" Margin="50 5 20 5"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
